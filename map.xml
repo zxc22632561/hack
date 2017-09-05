@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.6.6
+- https://www.phpmyadmin.net
+-
+- 主機: localhost
+- 產生時間： 2017-09-05 13:48:07
+- 伺服器版本: 5.7.17-log
+- PHP 版本： 5.6.30
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="map" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="address">
+                CREATE TABLE `address` (
+                  `no` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '土地編號',
+                  `addressname` varchar(10) NOT NULL COMMENT '土地名稱',
+                  `lat` varchar(10) NOT NULL COMMENT '土地緯度',
+                  `log` varchar(10) NOT NULL COMMENT '土地經度',
+                  `price` varchar(10) NOT NULL COMMENT '土地價格',
+                  UNIQUE KEY `no` (`no`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COMMENT='土地總表';
+            </pma:table>
+            <pma:table name="answer">
+                CREATE TABLE `answer` (
+                  `no` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '答案編號',
+                  `answer` varchar(20) NOT NULL COMMENT '答案',
+                  `problemno` int(10) NOT NULL COMMENT '對應問題編號',
+                  `correct` varchar(10) NOT NULL COMMENT '答案對錯',
+                  UNIQUE KEY `no` (`no`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COMMENT='答案總表';
+            </pma:table>
+            <pma:table name="problem">
+                CREATE TABLE `problem` (
+                  `no` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '問題編號',
+                  `problem` varchar(25) NOT NULL COMMENT '問題',
+                  `addressno` int(10) NOT NULL COMMENT '對應土地編號',
+                  UNIQUE KEY `no` (`no`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COMMENT='問題總表';
+            </pma:table>
+            <pma:table name="reward">
+                CREATE TABLE `reward` (
+                  `no` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '獎品編號',
+                  `reward` varchar(25) NOT NULL COMMENT '獎品名稱',
+                  `image` varchar(35) NOT NULL COMMENT '獎品內容',
+                  `answerno` int(11) NOT NULL COMMENT '對應答案編號',
+                  UNIQUE KEY `no` (`no`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COMMENT='獎品總表';
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - 資料庫： 'map'
+    -->
+    <database name="map">
+        <!-- 資料表 address -->
+        <table name="address">
+            <column name="no">1</column>
+            <column name="addressname">台南市</column>
+            <column name="lat">123</column>
+            <column name="log">456</column>
+            <column name="price">1000</column>
+        </table>
+        <table name="address">
+            <column name="no">2</column>
+            <column name="addressname">台北市</column>
+            <column name="lat">23.005629</column>
+            <column name="log">120.190505</column>
+            <column name="price">2000</column>
+        </table>
+        <table name="address">
+            <column name="no">3</column>
+            <column name="addressname">台中市</column>
+            <column name="lat">333</column>
+            <column name="log">73783</column>
+            <column name="price">83378</column>
+        </table>
+        <!-- 資料表 answer -->
+        <table name="answer">
+            <column name="no">1</column>
+            <column name="answer">迷猴</column>
+            <column name="problemno">1</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">2</column>
+            <column name="answer">獼猴</column>
+            <column name="problemno">1</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">3</column>
+            <column name="answer">謎猴</column>
+            <column name="problemno">1</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">4</column>
+            <column name="answer">南投</column>
+            <column name="problemno">2</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">5</column>
+            <column name="answer">台中</column>
+            <column name="problemno">2</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">6</column>
+            <column name="answer">基隆</column>
+            <column name="problemno">2</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">7</column>
+            <column name="answer">台北</column>
+            <column name="problemno">3</column>
+            <column name="correct">ture</column>
+        </table>
+        <table name="answer">
+            <column name="no">8</column>
+            <column name="answer">桃園</column>
+            <column name="problemno">3</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">9</column>
+            <column name="answer">新竹</column>
+            <column name="problemno">3</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">10</column>
+            <column name="answer">鼓山</column>
+            <column name="problemno">4</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">11</column>
+            <column name="answer">左營</column>
+            <column name="problemno">4</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">12</column>
+            <column name="answer">前鎮</column>
+            <column name="problemno">4</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">13</column>
+            <column name="answer">101</column>
+            <column name="problemno">5</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">14</column>
+            <column name="answer">111</column>
+            <column name="problemno">5</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">15</column>
+            <column name="answer">102</column>
+            <column name="problemno">5</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">16</column>
+            <column name="answer">野村美月</column>
+            <column name="problemno">6</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">17</column>
+            <column name="answer">竹岡美穗</column>
+            <column name="problemno">6</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">18</column>
+            <column name="answer">結城光流</column>
+            <column name="problemno">6</column>
+            <column name="correct">fasle</column>
+        </table>
+        <table name="answer">
+            <column name="no">19</column>
+            <column name="answer">排灣族</column>
+            <column name="problemno">7</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">20</column>
+            <column name="answer">達悟族</column>
+            <column name="problemno">7</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">21</column>
+            <column name="answer">阿美族</column>
+            <column name="problemno">7</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">22</column>
+            <column name="answer">柯文哲</column>
+            <column name="problemno">8</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">23</column>
+            <column name="answer">科文哲</column>
+            <column name="problemno">8</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">24</column>
+            <column name="answer">柯文折</column>
+            <column name="problemno">8</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">25</column>
+            <column name="answer">刀劍亂舞</column>
+            <column name="problemno">9</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">26</column>
+            <column name="answer">刀劍神域</column>
+            <column name="problemno">9</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">27</column>
+            <column name="answer">刀劍省域</column>
+            <column name="problemno">9</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">28</column>
+            <column name="answer">源式</column>
+            <column name="problemno">10</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">29</column>
+            <column name="answer">閃光</column>
+            <column name="problemno">10</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">30</column>
+            <column name="answer">半藏</column>
+            <column name="problemno">10</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">31</column>
+            <column name="answer">Nintendo Switch</column>
+            <column name="problemno">11</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">32</column>
+            <column name="answer">switch</column>
+            <column name="problemno">11</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">33</column>
+            <column name="answer">Nier Switch</column>
+            <column name="problemno">11</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">34</column>
+            <column name="answer">三葉&amp;龍</column>
+            <column name="problemno">12</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">35</column>
+            <column name="answer">三葉&amp;瀧</column>
+            <column name="problemno">12</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">36</column>
+            <column name="answer">三業&amp;瀧</column>
+            <column name="problemno">12</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">37</column>
+            <column name="answer">Steam</column>
+            <column name="problemno">13</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">38</column>
+            <column name="answer">Stem</column>
+            <column name="problemno">13</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">39</column>
+            <column name="answer">Stea</column>
+            <column name="problemno">13</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">40</column>
+            <column name="answer">柯P</column>
+            <column name="problemno">14</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">41</column>
+            <column name="answer">柯基</column>
+            <column name="problemno">14</column>
+            <column name="correct">true</column>
+        </table>
+        <table name="answer">
+            <column name="no">42</column>
+            <column name="answer">柯機</column>
+            <column name="problemno">14</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">43</column>
+            <column name="answer">台南</column>
+            <column name="problemno">15</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">44</column>
+            <column name="answer">屏東</column>
+            <column name="problemno">15</column>
+            <column name="correct">false</column>
+        </table>
+        <table name="answer">
+            <column name="no">45</column>
+            <column name="answer">嘉義</column>
+            <column name="problemno">15</column>
+            <column name="correct">true</column>
+        </table>
+        <!-- 資料表 problem -->
+        <table name="problem">
+            <column name="no">1</column>
+            <column name="problem">柴山最多什麼動物?</column>
+            <column name="addressno">1</column>
+        </table>
+        <table name="problem">
+            <column name="no">2</column>
+            <column name="problem">哪個縣市完全不靠海?</column>
+            <column name="addressno">2</column>
+        </table>
+        <table name="problem">
+            <column name="no">3</column>
+            <column name="problem">世大運在那裡舉行?</column>
+            <column name="addressno">3</column>
+        </table>
+        <table name="problem">
+            <column name="no">4</column>
+            <column name="problem">夢時代位於高雄哪裡?</column>
+            <column name="addressno">4</column>
+        </table>
+        <table name="problem">
+            <column name="no">5</column>
+            <column name="problem">台北最高的建築物是?</column>
+            <column name="addressno">5</column>
+        </table>
+        <table name="problem">
+            <column name="no">6</column>
+            <column name="problem">《文學少女》是哪個作家所寫的?</column>
+            <column name="addressno">6</column>
+        </table>
+        <table name="problem">
+            <column name="no">7</column>
+            <column name="problem">位於台東的原住民是?</column>
+            <column name="addressno">7</column>
+        </table>
+        <table name="problem">
+            <column name="no">8</column>
+            <column name="problem">台北市長是誰?</column>
+            <column name="addressno">8</column>
+        </table>
+        <table name="problem">
+            <column name="no">9</column>
+            <column name="problem">「幫我撐10秒」原至於什麼動畫?</column>
+            <column name="addressno">9</column>
+        </table>
+        <table name="problem">
+            <column name="no">10</column>
+            <column name="problem">「竜が我が敌を喰らう」是鬥陣特工哪個角色的絕招?</column>
+            <column name="addressno">10</column>
+        </table>
+        <table name="problem">
+            <column name="no">11</column>
+            <column name="problem">任天堂新主機全名是?</column>
+            <column name="addressno">11</column>
+        </table>
+        <table name="problem">
+            <column name="no">12</column>
+            <column name="problem">《你的名字》的男女主角是?</column>
+            <column name="addressno">12</column>
+        </table>
+        <table name="problem">
+            <column name="no">13</column>
+            <column name="problem">知名網路遊戲商店的是?</column>
+            <column name="addressno">13</column>
+        </table>
+        <table name="problem">
+            <column name="no">14</column>
+            <column name="problem">短腿的狗狗品種是?</column>
+            <column name="addressno">14</column>
+        </table>
+        <table name="problem">
+            <column name="no">15</column>
+            <column name="problem">南故宮是位於南部的哪裡?</column>
+            <column name="addressno">15</column>
+        </table>
+        <!-- 資料表 reward -->
+        <table name="reward">
+            <column name="no">1</column>
+            <column name="reward">7-11 100元禮劵</column>
+            <column name="image">7-11 100元禮劵</column>
+            <column name="answerno">2</column>
+        </table>
+        <table name="reward">
+            <column name="no">2</column>
+            <column name="reward">金玉堂200元禮劵</column>
+            <column name="image"> 金玉堂200元禮劵</column>
+            <column name="answerno">4</column>
+        </table>
+        <table name="reward">
+            <column name="no">3</column>
+            <column name="reward">金玉堂100元禮劵</column>
+            <column name="image">金玉堂100元禮劵</column>
+            <column name="answerno">7</column>
+        </table>
+        <table name="reward">
+            <column name="no">4</column>
+            <column name="reward">西堤餐劵</column>
+            <column name="image">西堤餐劵</column>
+            <column name="answerno">12</column>
+        </table>
+        <table name="reward">
+            <column name="no">5</column>
+            <column name="reward">PlayStation4 一台</column>
+            <column name="image">PlayStation4 一台</column>
+            <column name="answerno">14</column>
+        </table>
+        <table name="reward">
+            <column name="no">6</column>
+            <column name="reward">三商巧福折價劵</column>
+            <column name="image">三商巧福折價劵</column>
+            <column name="answerno">16</column>
+        </table>
+        <table name="reward">
+            <column name="no">7</column>
+            <column name="reward">迷客夏10元折價劵</column>
+            <column name="image">迷客夏10元折價劵</column>
+            <column name="answerno">21</column>
+        </table>
+        <table name="reward">
+            <column name="no">8</column>
+            <column name="reward">家樂福100元折價劵</column>
+            <column name="image">家樂福100元折價劵</column>
+            <column name="answerno">22</column>
+        </table>
+        <table name="reward">
+            <column name="no">9</column>
+            <column name="reward">金石堂100元折價劵</column>
+            <column name="image">金石堂100元折價劵</column>
+            <column name="answerno">26</column>
+        </table>
+        <table name="reward">
+            <column name="no">10</column>
+            <column name="reward">全聯100元禮劵</column>
+            <column name="image">全聯100元禮劵</column>
+            <column name="answerno">30</column>
+        </table>
+        <table name="reward">
+            <column name="no">11</column>
+            <column name="reward">麥當勞甜心卡</column>
+            <column name="image">麥當勞甜心卡</column>
+            <column name="answerno">31</column>
+        </table>
+        <table name="reward">
+            <column name="no">12</column>
+            <column name="reward">肯德基100元禮劵</column>
+            <column name="image">肯德基100元禮劵</column>
+            <column name="answerno">35</column>
+        </table>
+        <table name="reward">
+            <column name="no">13</column>
+            <column name="reward">威秀優惠劵</column>
+            <column name="image">威秀優惠劵</column>
+            <column name="answerno">37</column>
+        </table>
+        <table name="reward">
+            <column name="no">14</column>
+            <column name="reward">誠品100元禮劵</column>
+            <column name="image">誠品100元禮劵</column>
+            <column name="answerno">41</column>
+        </table>
+        <table name="reward">
+            <column name="no">15</column>
+            <column name="reward">新光三越100元禮劵</column>
+            <column name="image">新光三越100元禮劵</column>
+            <column name="answerno">45</column>
+        </table>
+    </database>
+</pma_xml_export>
